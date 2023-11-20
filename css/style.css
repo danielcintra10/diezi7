@@ -143,6 +143,20 @@ sup {
   vertical-align: baseline;
 }
 
+#link-inicio {
+  color: #4059AD !important;
+  background-color: #4059AD !important; 
+} 
+
+#link-inicio:hover {
+  color: rgba(29, 71, 112, 0.533) !important;
+  background-color: rgba(29, 71, 112, 0.533) !important;
+}
+
+#link-inicio:active {
+  color: #4059AD !important; /* color cuando se hace clic en el enlace */
+}
+
 sub {
   bottom: -.25em;
 }
@@ -152,13 +166,13 @@ sup {
 }
 
 a {
-  color: #7AB730;
+  color: #4059AD !important;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #527a20;
+  color: rgba(29, 71, 112, 0.533) !important;
   text-decoration: underline;
 }
 
