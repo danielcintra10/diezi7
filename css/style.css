@@ -157,6 +157,10 @@ sup {
   color: #4059AD !important; /* color cuando se hace clic en el enlace */
 }
 
+#link-inicio:focus {
+  color: #4059AD !important; /* color cuando se hace clic en el enlace */
+}
+
 sub {
   bottom: -.25em;
 }
