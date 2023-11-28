@@ -9858,3 +9858,13 @@ h2, h6{
 #footer-row{
   justify-content: space-around !important;
 }
+
+.social-links {
+  order: 1;
+  flex-basis: 25%;
+}
+
+#link-social {
+  order: 2;
+  flex-basis: 75%;
+}
