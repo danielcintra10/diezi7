@@ -9868,3 +9868,11 @@ h2, h6{
   order: 2;
   flex-basis: 75%;
 }
+
+#mision-container-col1 h2 {
+  color: #4059AD;
+}
+
+#mision-container-col3 h2 {
+  color: #4059AD;
+}
