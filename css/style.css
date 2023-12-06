@@ -9876,3 +9876,7 @@ h2, h6{
 #mision-container-col3 h2 {
   color: #4059AD;
 }
+
+#carrousel-inner-items div div h3, #carrousel-inner-items div div p{
+  color: aliceblue !important;
+}
