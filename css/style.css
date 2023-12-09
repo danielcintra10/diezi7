@@ -9884,3 +9884,9 @@ h2, h6{
 html {
   scroll-behavior: smooth !important;
 }
+
+input:focus, textarea:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: #4059AD !important;
+}
