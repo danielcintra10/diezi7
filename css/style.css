@@ -9880,3 +9880,7 @@ h2, h6{
 #carrousel-inner-items div div h3, #carrousel-inner-items div div p{
   color: aliceblue !important;
 }
+
+html {
+  scroll-behavior: smooth !important;
+}
