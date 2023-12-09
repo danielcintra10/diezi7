@@ -37,12 +37,12 @@ try {
     $mail->SMTPSecure = 'tls';                            
     $mail->Port       = 587;
     // destination
-    $mail->setFrom('diezi7oficialweb@gmail.com', 'pagina_oficial_17');
-    $mail->addAddress('eldany0510@gmail.com', 'correo_del_dany');
+    $mail->setFrom($gmailUsername, 'Pagina Web Oficial DIEZI7');
+    $mail->addAddress('diezi7oficial@gmail.com@gmail.com', 'CEO DIEZI7');
     // content
     $mail->isHTML(true);                                  
     $mail->Subject = "$m_subject: $name";
-    $mail->Body    = "Has recibido un nuevo mensaje desde la página de diezi7_oficial."."Aquí están los detalles: <br> Nombre: $name <br> Correo: $email <br> Asunto: $m_subject <br> Mensaje: $message";
+    $mail->Body    = "Has recibido un nuevo mensaje desde la página de DIEZI7 Oficial."." Aquí están los detalles: <br> Nombre: $name <br> Correo: $email <br> Asunto: $m_subject <br> Mensaje: $message";
     $mail->send();
   } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
