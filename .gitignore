@@ -2,6 +2,8 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=jspm
 
 ### jspm ###
+.env
 jspm_packages
 LICENSE
 # End of https://www.toptal.com/developers/gitignore/api/jspm
+/vendor/

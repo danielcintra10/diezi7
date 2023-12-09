@@ -4,17 +4,48 @@ if(empty($_POST['name']) || empty($_POST['subject']) || empty($_POST['message'])
   exit();
 }
 
+// import all php dependencies
+require_once __DIR__ . '/../vendor/autoload.php';
+
+// import PHPMailer and Dotenv classes in global name space
+use Dotenv\Dotenv as Dotenv;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 $name = strip_tags(htmlspecialchars($_POST['name']));
 $email = strip_tags(htmlspecialchars($_POST['email']));
 $m_subject = strip_tags(htmlspecialchars($_POST['subject']));
 $message = strip_tags(htmlspecialchars($_POST['message']));
 
-$to = "info@example.com"; // Change this email to your //
-$subject = "$m_subject:  $name";
-$body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\n\nEmail: $email\n\nSubject: $m_subject\n\nMessage: $message";
-$header = "From: $email";
-$header .= "Reply-To: $email";	
+// environment variables
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
 
-if(!mail($to, $subject, $body, $header))
-  http_response_code(500);
+$gmailUsername = $_ENV['GMAIL_USERNAME'];
+$gmailPassword = $_ENV['GMAIL_PASSWORD'];
+
+$mail = new PHPMailer(true);
+
+try {
+  // server configuration
+    $mail->SMTPDebug = 2;                                 
+    $mail->isSMTP();                                      
+    $mail->Host       = 'smtp.gmail.com';  
+    $mail->SMTPAuth   = true;                              
+    $mail->Username   = $gmailUsername;             
+    $mail->Password   = $gmailPassword;                           
+    $mail->SMTPSecure = 'tls';                            
+    $mail->Port       = 587;
+    // destination
+    $mail->setFrom($gmailUsername, 'Pagina Web Oficial DIEZI7');
+    $mail->addAddress('diezi7oficial@gmail.com@gmail.com', 'CEO DIEZI7');
+    // content
+    $mail->isHTML(true);                                  
+    $mail->Subject = "$m_subject: $name";
+    $mail->Body    = "Has recibido un nuevo mensaje desde la página de DIEZI7 Oficial."." Aquí están los detalles: <br> Nombre: $name <br> Correo: $email <br> Asunto: $m_subject <br> Mensaje: $message";
+    $mail->send();
+  } catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    http_response_code(500);
+}
 ?>
