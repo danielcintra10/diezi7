@@ -38,7 +38,7 @@ try {
     $mail->Port       = 587;
     // destination
     $mail->setFrom($gmailUsername, 'Pagina Web Oficial DIEZI7');
-    $mail->addAddress('diezi7oficial@gmail.com@gmail.com', 'CEO DIEZI7');
+    $mail->addAddress('diezi7oficial@gmail.com', 'CEO DIEZI7');
     // content
     $mail->isHTML(true);                                  
     $mail->Subject = "$m_subject: $name";
